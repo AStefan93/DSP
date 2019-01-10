@@ -1,0 +1,10 @@
+<map id="LD::MySobel" name="LD::MySobel">
+<area shape="rect" id="node2" href="$LaneDetection_8h.html#a2dbaaf7a39ee2d6d46c4f67cae71f651" title="LD::ROI" alt="" coords="559,5,630,32"/>
+<area shape="rect" id="node3" href="$LaneDetection_8h.html#a57364c31ed52bfa2b19a53ba9a6034f5" title="LD::FindPointsLane" alt="" coords="152,208,289,235"/>
+<area shape="rect" id="node4" href="$LaneDetection_8h.html#a15dac98f5e6a2722f83342030086fb0f" title="LD::Polyfit" alt="" coords="553,259,637,285"/>
+<area shape="rect" id="node5" href="$LaneDetection_8cpp.html#a2f936c207781a3e556f28e64bd464322" title="PrintLines" alt="" coords="555,208,635,235"/>
+<area shape="rect" id="node6" href="$LaneDetection_8h.html#a488c419fda62a06bb022fa025f4f3307" title="LD::Lane_Histogram" alt="" coords="337,157,480,184"/>
+<area shape="rect" id="node7" href="$LaneDetection_8h.html#a1d90a5e486727d57152101c7c6e2c6b2" title="LD::SlidingWindow" alt="" coords="528,56,661,83"/>
+<area shape="rect" id="node8" href="$LaneDetection_8h.html#ac725c61b114fcf28e0fc6ddf79b22d66" title="LD::LaneDetection" alt="" coords="529,107,660,133"/>
+<area shape="rect" id="node9" href="$LaneDetection_8h.html#aec4eb31efafac4e84d22dfd0b60e4e73" title="LD::BirdsEyeView" alt="" coords="530,157,659,184"/>
+</map>

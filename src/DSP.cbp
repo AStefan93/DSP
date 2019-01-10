@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="DSP" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/DSP" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+					<Add option="`pkg-config --cflags opencv`" />
+					<Add directory="../common/" />
+					<Add directory="../external/LaneDetection/include" />
+					<Add directory="../external/ObjectDetection/include" />
+				</Compiler>
+				<Linker>
+					<Add option="`pkg-config --libs opencv`" />
+					<Add option="-lpthread" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option platforms="Unix;" />
+				<Option output="bin/Release/DSP" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-s" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="`opencv-config --cxxflags`" />
+		</Compiler>
+		<Linker>
+			<Add option="`opencv-config --ldstaticflags`" />
+		</Linker>
+		<Unit filename="../common/dsp.h" />
+		<Unit filename="../common/dsp_typedef.h" />
+		<Unit filename="../common/perspective.cpp" />
+		<Unit filename="../common/perspective.h" />
+		<Unit filename="../external/LaneDetection/include/LaneDetection.h" />
+		<Unit filename="../external/LaneDetection/src/LaneDetection.cpp" />
+		<Unit filename="dsp.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

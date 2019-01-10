@@ -1,0 +1,148 @@
+\hypertarget{dsp_8h}{}\section{/home/uidg6179/\+Work/\+D\+S\+P/common/dsp.h File Reference}
+\label{dsp_8h}\index{/home/uidg6179/\+Work/\+D\+S\+P/common/dsp.\+h@{/home/uidg6179/\+Work/\+D\+S\+P/common/dsp.\+h}}
+
+
+Digital Signal Processing Header.  
+
+
+{\ttfamily \#include $<$opencv2/opencv.\+hpp$>$}\\*
+{\ttfamily \#include $<$opencv2/core/core.\+hpp$>$}\\*
+{\ttfamily \#include $<$opencv2/objdetect/objdetect.\+hpp$>$}\\*
+{\ttfamily \#include $<$opencv2/imgproc/imgproc.\+hpp$>$}\\*
+{\ttfamily \#include $<$opencv2/highgui/highgui.\+hpp$>$}\\*
+{\ttfamily \#include $<$pthread.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$ctime$>$}\\*
+{\ttfamily \#include $<$Lane\+Detection.\+h$>$}\\*
+{\ttfamily \#include $<$perspective.\+h$>$}\\*
+{\ttfamily \#include $<$dsp\+\_\+typedef.\+h$>$}\\*
+Include dependency graph for dsp.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dsp_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{dsp_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceDSP}{D\+SP}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{dsp_8h_ac6c13f8d30eaf89418a34bcb6073aac1}{U\+S\+E\+\_\+\+V\+I\+D\+EO}~(0)
+\begin{DoxyCompactList}\small\item\em Define to specify if the input is a video or a folder with frames. One means video is used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{dsp_8h_a5989468f3abed26950ce759d5f5ef6c0}{Lane\+Detection\+\_\+\+Thread} (void $\ast$)
+\begin{DoxyCompactList}\small\item\em Lane Detection Thread Function. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{dsp_8h_a0ca1d00292063ca70f2d8e76fcf021fa}{Object\+Detection\+\_\+\+Thread} (void $\ast$)
+\begin{DoxyCompactList}\small\item\em Object Detection Thread Function. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceDSP_aab506c3c3ba43df66f0ae5e59d729b0e}{D\+S\+P\+::\+Draw\+Lanes} (cv\+::\+Mat $\ast$, cv\+::\+Mat, cv\+::\+Scalar, unsigned int)
+\begin{DoxyCompactList}\small\item\em Draw Lanes is an \hyperlink{namespaceLD}{LD} Drawing Function. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceDSP_a96e81fd1549b20c70dde34e619c97ccc}{D\+S\+P\+::\+Fill\+Lanes} (cv\+::\+Mat $\ast$, \hyperlink{structt__output__LD}{t\+\_\+output\+\_\+\+LD}, unsigned int)
+\begin{DoxyCompactList}\small\item\em Fill Lanes is an \hyperlink{namespaceLD}{LD} Drawing Function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Digital Signal Processing Header. 
+
+This file includes all the other resources the \hyperlink{namespaceDSP}{D\+SP} project requires. 
+
+\subsection{Macro Definition Documentation}
+\index{dsp.\+h@{dsp.\+h}!U\+S\+E\+\_\+\+V\+I\+D\+EO@{U\+S\+E\+\_\+\+V\+I\+D\+EO}}
+\index{U\+S\+E\+\_\+\+V\+I\+D\+EO@{U\+S\+E\+\_\+\+V\+I\+D\+EO}!dsp.\+h@{dsp.\+h}}
+\subsubsection[{\texorpdfstring{U\+S\+E\+\_\+\+V\+I\+D\+EO}{USE_VIDEO}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+E\+\_\+\+V\+I\+D\+EO~(0)}\hypertarget{dsp_8h_ac6c13f8d30eaf89418a34bcb6073aac1}{}\label{dsp_8h_ac6c13f8d30eaf89418a34bcb6073aac1}
+
+
+Define to specify if the input is a video or a folder with frames. One means video is used. 
+
+
+
+\subsection{Function Documentation}
+\index{dsp.\+h@{dsp.\+h}!Lane\+Detection\+\_\+\+Thread@{Lane\+Detection\+\_\+\+Thread}}
+\index{Lane\+Detection\+\_\+\+Thread@{Lane\+Detection\+\_\+\+Thread}!dsp.\+h@{dsp.\+h}}
+\subsubsection[{\texorpdfstring{Lane\+Detection\+\_\+\+Thread(void $\ast$)}{LaneDetection_Thread(void *)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Lane\+Detection\+\_\+\+Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{dsp_8h_a5989468f3abed26950ce759d5f5ef6c0}{}\label{dsp_8h_a5989468f3abed26950ce759d5f5ef6c0}
+
+
+Lane Detection Thread Function. 
+
+This function is supposed to be called in parallel with Object Detection. 
+\begin{DoxyParams}{Parameters}
+{\em ptr\+\_\+image} & is a pointer to the image matrix of the current frame \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dsp_8h_a5989468f3abed26950ce759d5f5ef6c0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{dsp_8h_a5989468f3abed26950ce759d5f5ef6c0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{dsp.\+h@{dsp.\+h}!Object\+Detection\+\_\+\+Thread@{Object\+Detection\+\_\+\+Thread}}
+\index{Object\+Detection\+\_\+\+Thread@{Object\+Detection\+\_\+\+Thread}!dsp.\+h@{dsp.\+h}}
+\subsubsection[{\texorpdfstring{Object\+Detection\+\_\+\+Thread(void $\ast$)}{ObjectDetection_Thread(void *)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Object\+Detection\+\_\+\+Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{dsp_8h_a0ca1d00292063ca70f2d8e76fcf021fa}{}\label{dsp_8h_a0ca1d00292063ca70f2d8e76fcf021fa}
+
+
+Object Detection Thread Function. 
+
+This function is supposed to be called in parallel with Lane Detection. 
+\begin{DoxyParams}{Parameters}
+{\em ptr\+\_\+image} & is a pointer to the image matrix of the current frame \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{dsp_8h_a0ca1d00292063ca70f2d8e76fcf021fa_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{dsp_8h_a0ca1d00292063ca70f2d8e76fcf021fa_icgraph}
+\end{center}
+\end{figure}
+
+

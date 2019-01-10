@@ -1,0 +1,68 @@
+\hypertarget{namespaceDSP}{}\section{D\+SP Namespace Reference}
+\label{namespaceDSP}\index{D\+SP@{D\+SP}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespaceDSP_aab506c3c3ba43df66f0ae5e59d729b0e}{Draw\+Lanes} (cv\+::\+Mat $\ast$, cv\+::\+Mat, cv\+::\+Scalar, unsigned int)
+\begin{DoxyCompactList}\small\item\em Draw Lanes is an \hyperlink{namespaceLD}{LD} Drawing Function. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceDSP_a96e81fd1549b20c70dde34e619c97ccc}{Fill\+Lanes} (cv\+::\+Mat $\ast$, \hyperlink{structt__output__LD}{t\+\_\+output\+\_\+\+LD}, unsigned int)
+\begin{DoxyCompactList}\small\item\em Fill Lanes is an \hyperlink{namespaceLD}{LD} Drawing Function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{D\+SP@{D\+SP}!Draw\+Lanes@{Draw\+Lanes}}
+\index{Draw\+Lanes@{Draw\+Lanes}!D\+SP@{D\+SP}}
+\subsubsection[{\texorpdfstring{Draw\+Lanes(cv\+::\+Mat $\ast$, cv\+::\+Mat, cv\+::\+Scalar, unsigned int)}{DrawLanes(cv::Mat *, cv::Mat, cv::Scalar, unsigned int)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+S\+P\+::\+Draw\+Lanes (
+\begin{DoxyParamCaption}
+\item[{cv\+::\+Mat $\ast$}]{frame, }
+\item[{cv\+::\+Mat}]{corridor, }
+\item[{cv\+::\+Scalar}]{color, }
+\item[{unsigned int}]{thickness}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceDSP_aab506c3c3ba43df66f0ae5e59d729b0e}{}\label{namespaceDSP_aab506c3c3ba43df66f0ae5e59d729b0e}
+
+
+Draw Lanes is an \hyperlink{namespaceLD}{LD} Drawing Function. 
+
+This function draws over only the inner and outer edges of the detected markers. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em frame} & is a pointer to the image matrix of the current frame. \\
+\hline
+\mbox{\tt in}  & {\em corridor} & is the array with coefficients of the corridor. \\
+\hline
+\mbox{\tt in}  & {\em thickness} & is the thickness in pixels of the drawn lines. \\
+\hline
+\end{DoxyParams}
+\index{D\+SP@{D\+SP}!Fill\+Lanes@{Fill\+Lanes}}
+\index{Fill\+Lanes@{Fill\+Lanes}!D\+SP@{D\+SP}}
+\subsubsection[{\texorpdfstring{Fill\+Lanes(cv\+::\+Mat $\ast$, t\+\_\+output\+\_\+\+L\+D, unsigned int)}{FillLanes(cv::Mat *, t_output_LD, unsigned int)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+S\+P\+::\+Fill\+Lanes (
+\begin{DoxyParamCaption}
+\item[{cv\+::\+Mat $\ast$}]{frame, }
+\item[{{\bf t\+\_\+output\+\_\+\+LD}}]{lanes, }
+\item[{unsigned int}]{thickness}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceDSP_a96e81fd1549b20c70dde34e619c97ccc}{}\label{namespaceDSP_a96e81fd1549b20c70dde34e619c97ccc}
+
+
+Fill Lanes is an \hyperlink{namespaceLD}{LD} Drawing Function. 
+
+This function draws over the original frame regions that delimit the detected lane. 
+\begin{DoxyParams}{Parameters}
+{\em frame} & is a pointer to the image matrix of the current frame. \\
+\hline
+{\em lanes} & is the structure with the coefficients of the detected lane markers. \\
+\hline
+{\em thickness} & is the thickness in pixels of the drawn lines. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{namespaceDSP_a96e81fd1549b20c70dde34e619c97ccc_icgraph}
+\end{center}
+\end{figure}
+
+

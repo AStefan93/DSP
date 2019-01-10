@@ -1,0 +1,9 @@
+<map id="Matrix::getValue" name="Matrix::getValue">
+<area shape="rect" id="node2" href="$classMatrix.html#a0a749e62910dfcc12d8b00407ef0a2a2" title="Matrix::Matrix" alt="" coords="179,5,281,32"/>
+<area shape="rect" id="node3" href="$classMatrix.html#ad5eddf41615ebc5c9f5591a35db1e933" title="Matrix::~Matrix" alt="" coords="175,56,285,83"/>
+<area shape="rect" id="node4" href="$classMatrix.html#a304418db8e8fb7aa03692bfeb796dff5" title="Matrix::rows" alt="" coords="183,107,277,133"/>
+<area shape="rect" id="node5" href="$classMatrix.html#ae8619d1c450cfb9350f4e7dea15829cf" title="Matrix::cols" alt="" coords="185,157,275,184"/>
+<area shape="rect" id="node6" href="$classMatrix.html#ab8835ab2ead30efc83a08a57b7fbc0b5" title="Matrix::setRows" alt="" coords="171,208,289,235"/>
+<area shape="rect" id="node7" href="$classMatrix.html#a4c10fcb50c25493c4aa659afb40af389" title="Matrix::setCols" alt="" coords="175,259,285,285"/>
+<area shape="rect" id="node8" href="$classMatrix.html#a93ef7d0fc33aa6285abf13d4ad68de51" title="Matrix::setValue" alt="" coords="171,309,289,336"/>
+</map>

@@ -1,0 +1,202 @@
+\hypertarget{dsp_8cpp}{}\section{/home/uidg6179/\+Work/\+D\+S\+P/src/dsp.cpp File Reference}
+\label{dsp_8cpp}\index{/home/uidg6179/\+Work/\+D\+S\+P/src/dsp.\+cpp@{/home/uidg6179/\+Work/\+D\+S\+P/src/dsp.\+cpp}}
+
+
+Digital Signal Processing Main Source File.  
+
+
+{\ttfamily \#include $<$dsp.\+h$>$}\\*
+Include dependency graph for dsp.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dsp_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{dsp_8cpp_a1c09b475eaa0020f647f55cc8f67a1e9}{Object\+Detection} (cv\+::\+Mat image)
+\begin{DoxyCompactList}\small\item\em T\+O\+DO\+: Object Detection Test Function. To be removed. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{dsp_8cpp_a801c3cc838a70ccc4fcfe83722d0ab90}{Lane\+Detection\+\_\+\+Thread} (void $\ast$ptr\+\_\+image)
+\begin{DoxyCompactList}\small\item\em Lane Detection Thread Function. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{dsp_8cpp_aab225a8056efb0405c31d0426eef7e77}{Object\+Detection\+\_\+\+Thread} (void $\ast$ptr\+\_\+image)
+\begin{DoxyCompactList}\small\item\em Object Detection Thread Function. \end{DoxyCompactList}\item 
+int \hyperlink{dsp_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main \hyperlink{namespaceDSP}{D\+SP} Function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \hyperlink{dsp_8cpp_ae1bc4ca3734009366c5d6bab7fa5829c}{imgresize} = 0.\+5
+\begin{DoxyCompactList}\small\item\em Image resize factor to improve processing speed. This variable should be used in most vision components. \end{DoxyCompactList}\item 
+cv\+::\+Mat $\ast$ \hyperlink{dsp_8cpp_a403d9fe8ef41cf36a5ffd90aad465ed8}{p\+\_\+frame}
+\item 
+const cv\+::\+Point2f \hyperlink{dsp_8cpp_a8c10eecd54f2d03e08e63c52286cdffd}{src\+\_\+vertices} \mbox{[}4\mbox{]} = \{cv\+::\+Point(628$\ast$\hyperlink{dsp__typedef_8h_ae1bc4ca3734009366c5d6bab7fa5829c}{imgresize}, 289$\ast$\hyperlink{dsp__typedef_8h_ae1bc4ca3734009366c5d6bab7fa5829c}{imgresize}), cv\+::\+Point(736$\ast$\hyperlink{dsp__typedef_8h_ae1bc4ca3734009366c5d6bab7fa5829c}{imgresize}, 289$\ast$\hyperlink{dsp__typedef_8h_ae1bc4ca3734009366c5d6bab7fa5829c}{imgresize}), cv\+::\+Point(910$\ast$\hyperlink{dsp__typedef_8h_ae1bc4ca3734009366c5d6bab7fa5829c}{imgresize}, 511$\ast$\hyperlink{dsp__typedef_8h_ae1bc4ca3734009366c5d6bab7fa5829c}{imgresize}), cv\+::\+Point(343$\ast$\hyperlink{dsp__typedef_8h_ae1bc4ca3734009366c5d6bab7fa5829c}{imgresize}, 511$\ast$\hyperlink{dsp__typedef_8h_ae1bc4ca3734009366c5d6bab7fa5829c}{imgresize})\}
+\item 
+const cv\+::\+Point2f \hyperlink{dsp_8cpp_aa15465f0940eb687983f22a9c0455dd5}{dst\+\_\+vertices} \mbox{[}4\mbox{]} = \{cv\+::\+Point(200$\ast$\hyperlink{dsp__typedef_8h_ae1bc4ca3734009366c5d6bab7fa5829c}{imgresize}, 2$\ast$\hyperlink{dsp__typedef_8h_ae1bc4ca3734009366c5d6bab7fa5829c}{imgresize}), cv\+::\+Point(550$\ast$\hyperlink{dsp__typedef_8h_ae1bc4ca3734009366c5d6bab7fa5829c}{imgresize}, 2$\ast$\hyperlink{dsp__typedef_8h_ae1bc4ca3734009366c5d6bab7fa5829c}{imgresize}), cv\+::\+Point(550$\ast$\hyperlink{dsp__typedef_8h_ae1bc4ca3734009366c5d6bab7fa5829c}{imgresize}, 299$\ast$\hyperlink{dsp__typedef_8h_ae1bc4ca3734009366c5d6bab7fa5829c}{imgresize}), cv\+::\+Point(200$\ast$\hyperlink{dsp__typedef_8h_ae1bc4ca3734009366c5d6bab7fa5829c}{imgresize}, 299$\ast$\hyperlink{dsp__typedef_8h_ae1bc4ca3734009366c5d6bab7fa5829c}{imgresize})\}
+\item 
+\hyperlink{structt__generic__DSP}{t\+\_\+generic\+\_\+\+D\+SP} \hyperlink{dsp_8cpp_a99c4b64e9ac92ad76c8a6f0418e83051}{generic\+\_\+\+D\+SP}
+\item 
+\hyperlink{structt__output__LD}{t\+\_\+output\+\_\+\+LD} \hyperlink{dsp_8cpp_ad29a1050e82d8f2e222e7db89dcccd04}{output\+\_\+\+LD}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Digital Signal Processing Main Source File. 
+
+This file should include the main application, grabbing of frames and calling of vision components, like \hyperlink{namespaceLD}{LD} and OD. 
+
+\subsection{Function Documentation}
+\index{dsp.\+cpp@{dsp.\+cpp}!Lane\+Detection\+\_\+\+Thread@{Lane\+Detection\+\_\+\+Thread}}
+\index{Lane\+Detection\+\_\+\+Thread@{Lane\+Detection\+\_\+\+Thread}!dsp.\+cpp@{dsp.\+cpp}}
+\subsubsection[{\texorpdfstring{Lane\+Detection\+\_\+\+Thread(void $\ast$ptr\+\_\+image)}{LaneDetection_Thread(void *ptr_image)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Lane\+Detection\+\_\+\+Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{dsp_8cpp_a801c3cc838a70ccc4fcfe83722d0ab90}{}\label{dsp_8cpp_a801c3cc838a70ccc4fcfe83722d0ab90}
+
+
+Lane Detection Thread Function. 
+
+This function is supposed to be called in parallel with Object Detection. 
+\begin{DoxyParams}{Parameters}
+{\em ptr\+\_\+image} & is a pointer to the image matrix of the current frame \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dsp_8cpp_a801c3cc838a70ccc4fcfe83722d0ab90_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{dsp_8cpp_a801c3cc838a70ccc4fcfe83722d0ab90_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{dsp.\+cpp@{dsp.\+cpp}!main@{main}}
+\index{main@{main}!dsp.\+cpp@{dsp.\+cpp}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{dsp_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{}\label{dsp_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Main \hyperlink{namespaceDSP}{D\+SP} Function. 
+
+This function is the main function called by the operating system. 
+\begin{DoxyParams}{Parameters}
+{\em argc} & -\/ is the iterator for the options given when the script is called \\
+\hline
+{\em argv} & -\/ is a pointer to the options given when the script is called \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dsp_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{dsp.\+cpp@{dsp.\+cpp}!Object\+Detection@{Object\+Detection}}
+\index{Object\+Detection@{Object\+Detection}!dsp.\+cpp@{dsp.\+cpp}}
+\subsubsection[{\texorpdfstring{Object\+Detection(cv\+::\+Mat image)}{ObjectDetection(cv::Mat image)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Object\+Detection (
+\begin{DoxyParamCaption}
+\item[{cv\+::\+Mat}]{image}
+\end{DoxyParamCaption}
+)}\hypertarget{dsp_8cpp_a1c09b475eaa0020f647f55cc8f67a1e9}{}\label{dsp_8cpp_a1c09b475eaa0020f647f55cc8f67a1e9}
+
+
+T\+O\+DO\+: Object Detection Test Function. To be removed. 
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dsp_8cpp_a1c09b475eaa0020f647f55cc8f67a1e9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{dsp.\+cpp@{dsp.\+cpp}!Object\+Detection\+\_\+\+Thread@{Object\+Detection\+\_\+\+Thread}}
+\index{Object\+Detection\+\_\+\+Thread@{Object\+Detection\+\_\+\+Thread}!dsp.\+cpp@{dsp.\+cpp}}
+\subsubsection[{\texorpdfstring{Object\+Detection\+\_\+\+Thread(void $\ast$ptr\+\_\+image)}{ObjectDetection_Thread(void *ptr_image)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Object\+Detection\+\_\+\+Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{dsp_8cpp_aab225a8056efb0405c31d0426eef7e77}{}\label{dsp_8cpp_aab225a8056efb0405c31d0426eef7e77}
+
+
+Object Detection Thread Function. 
+
+This function is supposed to be called in parallel with Lane Detection. 
+\begin{DoxyParams}{Parameters}
+{\em ptr\+\_\+image} & is a pointer to the image matrix of the current frame \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{dsp_8cpp_aab225a8056efb0405c31d0426eef7e77_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{dsp_8cpp_aab225a8056efb0405c31d0426eef7e77_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{dsp.\+cpp@{dsp.\+cpp}!dst\+\_\+vertices@{dst\+\_\+vertices}}
+\index{dst\+\_\+vertices@{dst\+\_\+vertices}!dsp.\+cpp@{dsp.\+cpp}}
+\subsubsection[{\texorpdfstring{dst\+\_\+vertices}{dst_vertices}}]{\setlength{\rightskip}{0pt plus 5cm}const cv\+::\+Point2f dst\+\_\+vertices\mbox{[}4\mbox{]} = \{cv\+::\+Point(200$\ast${\bf imgresize}, 2$\ast${\bf imgresize}), cv\+::\+Point(550$\ast${\bf imgresize}, 2$\ast${\bf imgresize}), cv\+::\+Point(550$\ast${\bf imgresize}, 299$\ast${\bf imgresize}), cv\+::\+Point(200$\ast${\bf imgresize}, 299$\ast${\bf imgresize})\}}\hypertarget{dsp_8cpp_aa15465f0940eb687983f22a9c0455dd5}{}\label{dsp_8cpp_aa15465f0940eb687983f22a9c0455dd5}
+\index{dsp.\+cpp@{dsp.\+cpp}!generic\+\_\+\+D\+SP@{generic\+\_\+\+D\+SP}}
+\index{generic\+\_\+\+D\+SP@{generic\+\_\+\+D\+SP}!dsp.\+cpp@{dsp.\+cpp}}
+\subsubsection[{\texorpdfstring{generic\+\_\+\+D\+SP}{generic_DSP}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+\_\+generic\+\_\+\+D\+SP} generic\+\_\+\+D\+SP}\hypertarget{dsp_8cpp_a99c4b64e9ac92ad76c8a6f0418e83051}{}\label{dsp_8cpp_a99c4b64e9ac92ad76c8a6f0418e83051}
+\index{dsp.\+cpp@{dsp.\+cpp}!imgresize@{imgresize}}
+\index{imgresize@{imgresize}!dsp.\+cpp@{dsp.\+cpp}}
+\subsubsection[{\texorpdfstring{imgresize}{imgresize}}]{\setlength{\rightskip}{0pt plus 5cm}const double imgresize = 0.\+5}\hypertarget{dsp_8cpp_ae1bc4ca3734009366c5d6bab7fa5829c}{}\label{dsp_8cpp_ae1bc4ca3734009366c5d6bab7fa5829c}
+
+
+Image resize factor to improve processing speed. This variable should be used in most vision components. 
+
+\index{dsp.\+cpp@{dsp.\+cpp}!output\+\_\+\+LD@{output\+\_\+\+LD}}
+\index{output\+\_\+\+LD@{output\+\_\+\+LD}!dsp.\+cpp@{dsp.\+cpp}}
+\subsubsection[{\texorpdfstring{output\+\_\+\+LD}{output_LD}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+\_\+output\+\_\+\+LD} output\+\_\+\+LD}\hypertarget{dsp_8cpp_ad29a1050e82d8f2e222e7db89dcccd04}{}\label{dsp_8cpp_ad29a1050e82d8f2e222e7db89dcccd04}
+\index{dsp.\+cpp@{dsp.\+cpp}!p\+\_\+frame@{p\+\_\+frame}}
+\index{p\+\_\+frame@{p\+\_\+frame}!dsp.\+cpp@{dsp.\+cpp}}
+\subsubsection[{\texorpdfstring{p\+\_\+frame}{p_frame}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat$\ast$ p\+\_\+frame}\hypertarget{dsp_8cpp_a403d9fe8ef41cf36a5ffd90aad465ed8}{}\label{dsp_8cpp_a403d9fe8ef41cf36a5ffd90aad465ed8}
+\index{dsp.\+cpp@{dsp.\+cpp}!src\+\_\+vertices@{src\+\_\+vertices}}
+\index{src\+\_\+vertices@{src\+\_\+vertices}!dsp.\+cpp@{dsp.\+cpp}}
+\subsubsection[{\texorpdfstring{src\+\_\+vertices}{src_vertices}}]{\setlength{\rightskip}{0pt plus 5cm}const cv\+::\+Point2f src\+\_\+vertices\mbox{[}4\mbox{]} = \{cv\+::\+Point(628$\ast${\bf imgresize}, 289$\ast${\bf imgresize}), cv\+::\+Point(736$\ast${\bf imgresize}, 289$\ast${\bf imgresize}), cv\+::\+Point(910$\ast${\bf imgresize}, 511$\ast${\bf imgresize}), cv\+::\+Point(343$\ast${\bf imgresize}, 511$\ast${\bf imgresize})\}}\hypertarget{dsp_8cpp_a8c10eecd54f2d03e08e63c52286cdffd}{}\label{dsp_8cpp_a8c10eecd54f2d03e08e63c52286cdffd}

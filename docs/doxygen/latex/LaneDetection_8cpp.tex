@@ -1,0 +1,100 @@
+\hypertarget{LaneDetection_8cpp}{}\section{/home/uidg6179/\+Work/\+D\+S\+P/external/\+Lane\+Detection-\/1/src/\+Lane\+Detection.cpp File Reference}
+\label{LaneDetection_8cpp}\index{/home/uidg6179/\+Work/\+D\+S\+P/external/\+Lane\+Detection-\/1/src/\+Lane\+Detection.\+cpp@{/home/uidg6179/\+Work/\+D\+S\+P/external/\+Lane\+Detection-\/1/src/\+Lane\+Detection.\+cpp}}
+
+
+Lane Detection Main Source File.  
+
+
+{\ttfamily \#include \char`\"{}../include/\+Lane\+Detection.\+h\char`\"{}}\\*
+Include dependency graph for Lane\+Detection.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LaneDetection_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{LaneDetection_8cpp_a0cb0ca7004f06149f9e2515b2e37fb5c}{middle}(Original\+Img)~Original\+Img.\+cols/100$\ast$50
+\begin{DoxyCompactList}\small\item\em M\+I\+D\+D\+LE OF T\+R\+A\+V\+EL L\+A\+NE (Proportion) \end{DoxyCompactList}\item 
+\#define \hyperlink{LaneDetection_8cpp_a521fd8e1f3b21ad1529168f0982c0687}{Lane\+Width}(Original\+Img)~Original\+Img.\+cols/100$\ast$5
+\begin{DoxyCompactList}\small\item\em Minimul width in pixels of a line to be considered lane. \end{DoxyCompactList}\item 
+\#define \hyperlink{LaneDetection_8cpp_a00b7ee0c58959d7054d8b06b53c0a5e4}{Sliding\+Window\+Width}(img)~img.\+cols$\ast$10/100
+\item 
+\#define \hyperlink{LaneDetection_8cpp_a9e7e95d7285690c8b9b73d34d44070d5}{Starting\+Points\+Percentage}~30
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{LaneDetection_8cpp_a2f936c207781a3e556f28e64bd464322}{Print\+Lines} (cv\+::\+Mat \&Original\+Img, cv\+::\+Mat dst, int x, int y, int z)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Lane Detection Main Source File. 
+
+This file should include the main application of the Lane Detection project. 
+
+\subsection{Macro Definition Documentation}
+\index{Lane\+Detection.\+cpp@{Lane\+Detection.\+cpp}!Lane\+Width@{Lane\+Width}}
+\index{Lane\+Width@{Lane\+Width}!Lane\+Detection.\+cpp@{Lane\+Detection.\+cpp}}
+\subsubsection[{\texorpdfstring{Lane\+Width}{LaneWidth}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Lane\+Width(
+\begin{DoxyParamCaption}
+\item[{}]{Original\+Img}
+\end{DoxyParamCaption}
+)~Original\+Img.\+cols/100$\ast$5}\hypertarget{LaneDetection_8cpp_a521fd8e1f3b21ad1529168f0982c0687}{}\label{LaneDetection_8cpp_a521fd8e1f3b21ad1529168f0982c0687}
+
+
+Minimul width in pixels of a line to be considered lane. 
+
+Used in the algorithm for determening if the space between right sobel and left sobel is smaller than Lane\+Width \index{Lane\+Detection.\+cpp@{Lane\+Detection.\+cpp}!middle@{middle}}
+\index{middle@{middle}!Lane\+Detection.\+cpp@{Lane\+Detection.\+cpp}}
+\subsubsection[{\texorpdfstring{middle}{middle}}]{\setlength{\rightskip}{0pt plus 5cm}\#define middle(
+\begin{DoxyParamCaption}
+\item[{}]{Original\+Img}
+\end{DoxyParamCaption}
+)~Original\+Img.\+cols/100$\ast$50}\hypertarget{LaneDetection_8cpp_a0cb0ca7004f06149f9e2515b2e37fb5c}{}\label{LaneDetection_8cpp_a0cb0ca7004f06149f9e2515b2e37fb5c}
+
+
+M\+I\+D\+D\+LE OF T\+R\+A\+V\+EL L\+A\+NE (Proportion) 
+
+Needed for separating Left lanes from right lanes \index{Lane\+Detection.\+cpp@{Lane\+Detection.\+cpp}!Sliding\+Window\+Width@{Sliding\+Window\+Width}}
+\index{Sliding\+Window\+Width@{Sliding\+Window\+Width}!Lane\+Detection.\+cpp@{Lane\+Detection.\+cpp}}
+\subsubsection[{\texorpdfstring{Sliding\+Window\+Width}{SlidingWindowWidth}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Sliding\+Window\+Width(
+\begin{DoxyParamCaption}
+\item[{}]{img}
+\end{DoxyParamCaption}
+)~img.\+cols$\ast$10/100}\hypertarget{LaneDetection_8cpp_a00b7ee0c58959d7054d8b06b53c0a5e4}{}\label{LaneDetection_8cpp_a00b7ee0c58959d7054d8b06b53c0a5e4}
+\index{Lane\+Detection.\+cpp@{Lane\+Detection.\+cpp}!Starting\+Points\+Percentage@{Starting\+Points\+Percentage}}
+\index{Starting\+Points\+Percentage@{Starting\+Points\+Percentage}!Lane\+Detection.\+cpp@{Lane\+Detection.\+cpp}}
+\subsubsection[{\texorpdfstring{Starting\+Points\+Percentage}{StartingPointsPercentage}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Starting\+Points\+Percentage~30}\hypertarget{LaneDetection_8cpp_a9e7e95d7285690c8b9b73d34d44070d5}{}\label{LaneDetection_8cpp_a9e7e95d7285690c8b9b73d34d44070d5}
+used for setting the width of the sliding window as a percentage of the image width 
+
+\subsection{Function Documentation}
+\index{Lane\+Detection.\+cpp@{Lane\+Detection.\+cpp}!Print\+Lines@{Print\+Lines}}
+\index{Print\+Lines@{Print\+Lines}!Lane\+Detection.\+cpp@{Lane\+Detection.\+cpp}}
+\subsubsection[{\texorpdfstring{Print\+Lines(cv\+::\+Mat \&\+Original\+Img, cv\+::\+Mat dst, int x, int y, int z)}{PrintLines(cv::Mat &OriginalImg, cv::Mat dst, int x, int y, int z)}}]{\setlength{\rightskip}{0pt plus 5cm}void Print\+Lines (
+\begin{DoxyParamCaption}
+\item[{cv\+::\+Mat \&}]{Original\+Img, }
+\item[{cv\+::\+Mat}]{dst, }
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{LaneDetection_8cpp_a2f936c207781a3e556f28e64bd464322}{}\label{LaneDetection_8cpp_a2f936c207781a3e556f28e64bd464322}
+here we print the polynom on the Original Img dst is the matrix with the 4 coefficients of the polynom we want to print x, y,w is the color (rgb), of the polynom we will print we copy the 4 coefficients form dst to a,b,c,d
+
+for each row of the Original img(wich will be the x) we will calculate the y by using the 4 coefficients of the polynom
+
+we print that point line creates a lane between 2 points, but if we give the same point, it will paint a point scalar(x,y,x) is the color, 2=pixel width of eat printed point 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LaneDetection_8cpp_a2f936c207781a3e556f28e64bd464322_icgraph}
+\end{center}
+\end{figure}
+
+

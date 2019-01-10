@@ -1,0 +1,344 @@
+\hypertarget{namespaceLD}{}\section{LD Namespace Reference}
+\label{namespaceLD}\index{LD@{LD}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{namespaceLD_ac725c61b114fcf28e0fc6ddf79b22d66}{Lane\+Detection} (cv\+::\+Mat Original\+Img)
+\begin{DoxyCompactList}\small\item\em Lane Detection Function. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceLD_a15dac98f5e6a2722f83342030086fb0f}{Polyfit} (cv\+::vector$<$ cv\+::\+Point $>$ Vector\+Points, cv\+::\+Mat \&dst)
+\item 
+void \hyperlink{namespaceLD_a1d90a5e486727d57152101c7c6e2c6b2}{Sliding\+Window} (cv\+::vector$<$ cv\+::\+Point $>$ \&left, cv\+::vector$<$ cv\+::\+Point $>$ \&right, cv\+::\+Mat img, cv\+::\+Mat \&img3)
+\item 
+void \hyperlink{namespaceLD_a2dbaaf7a39ee2d6d46c4f67cae71f651}{R\+OI} (cv\+::\+Mat \&img1, cv\+::\+Mat \&img2)
+\item 
+void \hyperlink{namespaceLD_ad43fbc5868819b9d2b70f00ed45142f4}{Horizontal\+\_\+\+Sobel} (cv\+::\+Mat img, cv\+::\+Mat \&img1, cv\+::\+Mat \&img2)
+\item 
+void \hyperlink{namespaceLD_a57364c31ed52bfa2b19a53ba9a6034f5}{Find\+Points\+Lane} (cv\+::\+Mat \&Original\+Img, cv\+::\+Mat img1, cv\+::\+Mat img2, cv\+::vector$<$ cv\+::\+Point $>$ \&Outer\+Left, cv\+::vector$<$ cv\+::\+Point $>$ \&Inner\+Left, cv\+::vector$<$ cv\+::\+Point $>$ \&Inner\+Right, cv\+::vector$<$ cv\+::\+Point $>$ \&Outer\+Right)
+\item 
+cv\+::\+Mat \hyperlink{namespaceLD_aec4eb31efafac4e84d22dfd0b60e4e73}{Birds\+Eye\+View} (cv\+::\+Mat img)
+\item 
+int $\ast$ \hyperlink{namespaceLD_a488c419fda62a06bb022fa025f4f3307}{Lane\+\_\+\+Histogram} (cv\+::\+Mat img, int procent, int peaks)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{LD@{LD}!Birds\+Eye\+View@{Birds\+Eye\+View}}
+\index{Birds\+Eye\+View@{Birds\+Eye\+View}!LD@{LD}}
+\subsubsection[{\texorpdfstring{Birds\+Eye\+View(cv\+::\+Mat img)}{BirdsEyeView(cv::Mat img)}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat L\+D\+::\+Birds\+Eye\+View (
+\begin{DoxyParamCaption}
+\item[{cv\+::\+Mat}]{img}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceLD_aec4eb31efafac4e84d22dfd0b60e4e73}{}\label{namespaceLD_aec4eb31efafac4e84d22dfd0b60e4e73}
+Transforms a Picture from Normal view To Bird\textquotesingle{}s eye view (view of the road fron the top). We choose 4 points in the original picture that we know should be on a straight line in reality, then we choose 4 points in the New picture, wich will correspond to the 4 that we chose on the first picture
+
+used when first calling Sliding\+Window , to specify in wich percentage of the image we will search the 2 starting points(from the bottom of the image) max deviation in percentage. ex 30 means if the deviation between 2 sliding windows is greater than 30\% of Sliding\+Window\+Width, we ignore that deviation. This helps to ignore false detections Transforms a Picture from Normal view To Bird\textquotesingle{}s eye view (view of the road fron the top). We choose 4 points in the original picture that we know should be on a straight line in reality, then we choose 4 points in the New picture, wich will correspond to the 4 that we chose on the first picture we create the dst picture that we will return(rows, cols, type) 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceLD_aec4eb31efafac4e84d22dfd0b60e4e73_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{LD@{LD}!Find\+Points\+Lane@{Find\+Points\+Lane}}
+\index{Find\+Points\+Lane@{Find\+Points\+Lane}!LD@{LD}}
+\subsubsection[{\texorpdfstring{Find\+Points\+Lane(cv\+::\+Mat \&\+Original\+Img, cv\+::\+Mat img1, cv\+::\+Mat img2, cv\+::vector$<$ cv\+::\+Point $>$ \&\+Outer\+Left, cv\+::vector$<$ cv\+::\+Point $>$ \&\+Inner\+Left, cv\+::vector$<$ cv\+::\+Point $>$ \&\+Inner\+Right, cv\+::vector$<$ cv\+::\+Point $>$ \&\+Outer\+Right)}{FindPointsLane(cv::Mat &OriginalImg, cv::Mat img1, cv::Mat img2, cv::vector< cv::Point > &OuterLeft, cv::vector< cv::Point > &InnerLeft, cv::vector< cv::Point > &InnerRight, cv::vector< cv::Point > &OuterRight)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+D\+::\+Find\+Points\+Lane (
+\begin{DoxyParamCaption}
+\item[{cv\+::\+Mat \&}]{Original\+Img, }
+\item[{cv\+::\+Mat}]{img1, }
+\item[{cv\+::\+Mat}]{img2, }
+\item[{cv\+::vector$<$ cv\+::\+Point $>$ \&}]{Outer\+Left, }
+\item[{cv\+::vector$<$ cv\+::\+Point $>$ \&}]{Inner\+Left, }
+\item[{cv\+::vector$<$ cv\+::\+Point $>$ \&}]{Inner\+Right, }
+\item[{cv\+::vector$<$ cv\+::\+Point $>$ \&}]{Outer\+Right}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceLD_a57364c31ed52bfa2b19a53ba9a6034f5}{}\label{namespaceLD_a57364c31ed52bfa2b19a53ba9a6034f5}
+The function recieves Original\+Img (wich will be modified), img1, img2=the 2 sobel images(left and right) and the 4 arrays of points , wich will be also filled with the points detected for each of the 2 lanes(inner and outer) if we are on the middle column, we change that pixel to red (to print the middle line, that separes the 2 lanes)
+
+k counts the points found at each row between the white on the left sobel and the white in the right sobel. if k becomes greater than the Lane\+Width that means that this is not a lane, so we dont need to save those points and k becomes 0 again
+
+if k$>$0 that means that we found a white pixel in the left sobel image so we need to continue to search from that point, but in the left sobel to find the end on the Lane. While we search , k increase and when it become greater than Lane\+Width, that means this is not a Lane portion
+
+we check if we found the corresponding point in the right sobel img
+
+if j$<$ middle, that means we are on the left side of the image
+
+so we push the point in the Inner Left vector, but also the point -\/k wich is the beginning of the lane (the left side of the lane)
+
+$<$ if we didnt find yet the corresponding point in the right sobel img we keep searchiing, while increasing k
+
+here, if we found 1 white pixel in the left sobel img then we make k=1, to start searching in the right sobel img 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceLD_a57364c31ed52bfa2b19a53ba9a6034f5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceLD_a57364c31ed52bfa2b19a53ba9a6034f5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{LD@{LD}!Horizontal\+\_\+\+Sobel@{Horizontal\+\_\+\+Sobel}}
+\index{Horizontal\+\_\+\+Sobel@{Horizontal\+\_\+\+Sobel}!LD@{LD}}
+\subsubsection[{\texorpdfstring{Horizontal\+\_\+\+Sobel(cv\+::\+Mat img, cv\+::\+Mat \&img1, cv\+::\+Mat \&img2)}{Horizontal_Sobel(cv::Mat img, cv::Mat &img1, cv::Mat &img2)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+D\+::\+Horizontal\+\_\+\+Sobel (
+\begin{DoxyParamCaption}
+\item[{cv\+::\+Mat}]{img, }
+\item[{cv\+::\+Mat \&}]{img1, }
+\item[{cv\+::\+Mat \&}]{img2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceLD_ad43fbc5868819b9d2b70f00ed45142f4}{}\label{namespaceLD_ad43fbc5868819b9d2b70f00ed45142f4}
+We get the img and we modify the img1 and img2 wich will be \+: img1= img on wich we applyed sobel filret from left img2= img on wich we applyed sobel filret from right 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceLD_ad43fbc5868819b9d2b70f00ed45142f4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceLD_ad43fbc5868819b9d2b70f00ed45142f4_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{LD@{LD}!Lane\+\_\+\+Histogram@{Lane\+\_\+\+Histogram}}
+\index{Lane\+\_\+\+Histogram@{Lane\+\_\+\+Histogram}!LD@{LD}}
+\subsubsection[{\texorpdfstring{Lane\+\_\+\+Histogram(cv\+::\+Mat img, int procent, int peaks)}{Lane_Histogram(cv::Mat img, int procent, int peaks)}}]{\setlength{\rightskip}{0pt plus 5cm}int $\ast$ L\+D\+::\+Lane\+\_\+\+Histogram (
+\begin{DoxyParamCaption}
+\item[{cv\+::\+Mat}]{img, }
+\item[{int}]{procent, }
+\item[{int}]{peaks}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceLD_a488c419fda62a06bb022fa025f4f3307}{}\label{namespaceLD_a488c419fda62a06bb022fa025f4f3307}
+we will receive a sobel image(right or left sobel) and for every column, we count the white pixels and we create a histogram but we will analyze only the lower half of the image (the second parameter of the function is percentage of image ex 30=$>$30\% of bottom image) because we will see the peak point of the 2 halfs of the histogram those peaks will be the beginning of the 2 lanes(left and right) we will need to know where the 2 lines begin, to later apply a method for detecting the lanes
+
+the thrid parameter of the function is the number of peaks we are looking for
+
+we will recieve a sobel image(right or left sobel) and for every column, we count the white pixels and we create a histogram but we will analyze only the lower half of the image (the second parameter of the function is percentage of image ex 30=$>$30\% of bottom image) because we will see the peak point of the 2 halfs of the histogram those peaks will be the beginning of the 2 lanes(left and right) we will need to know where the 2 lines begin, to later apply a method for detecting the lanes
+
+the thrid parameter of the function is the number of peaks we are looking for result\mbox{[}0\mbox{]} will be the numbers of (white points)/ (all pixels) (between 0 and 100) result\mbox{[}1\mbox{]} wil lbe the first peak, and (optionally) result\mbox{[}2\mbox{]} the second one
+
+total\+Sum will be the total number of white pixels in the image
+
+for each column, the sum resets sum is the number of white pixels found on each column
+
+in the current column, we start from the bottom till the (100-\/procent) of the image (ex procent=30 , so we go from 100\% to 70\% of image, starting from the bottom)
+
+and if the pixel is white
+
+we increment sum
+
+find the peaks of the histogram
+
+if we find a column with sum of white pixels greater than max, then we save that column (the i column), and its number of white pixels in max\+Sum
+
+we search the left pick
+
+we search the right pick
+
+peak==1 we put peak1 in the result pointer, peak==2, we put both peaks 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceLD_a488c419fda62a06bb022fa025f4f3307_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceLD_a488c419fda62a06bb022fa025f4f3307_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{LD@{LD}!Lane\+Detection@{Lane\+Detection}}
+\index{Lane\+Detection@{Lane\+Detection}!LD@{LD}}
+\subsubsection[{\texorpdfstring{Lane\+Detection(cv\+::\+Mat Original\+Img)}{LaneDetection(cv::Mat OriginalImg)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int L\+D\+::\+Lane\+Detection (
+\begin{DoxyParamCaption}
+\item[{cv\+::\+Mat}]{Original\+Img}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceLD_ac725c61b114fcf28e0fc6ddf79b22d66}{}\label{namespaceLD_ac725c61b114fcf28e0fc6ddf79b22d66}
+
+
+Lane Detection Function. 
+
+This function is the Lane Detection function called by the higher \hyperlink{namespaceDSP}{D\+SP} component. It calls all the other functions it requires for the full \hyperlink{namespaceLD}{LD} algorithm. 
+\begin{DoxyParams}{Parameters}
+{\em Original\+Img} & -\/ is the current frame passed to \hyperlink{namespaceLD}{LD} for processing. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceLD_ac725c61b114fcf28e0fc6ddf79b22d66_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceLD_ac725c61b114fcf28e0fc6ddf79b22d66_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{LD@{LD}!Polyfit@{Polyfit}}
+\index{Polyfit@{Polyfit}!LD@{LD}}
+\subsubsection[{\texorpdfstring{Polyfit(cv\+::vector$<$ cv\+::\+Point $>$ Vector\+Points, cv\+::\+Mat \&dst)}{Polyfit(cv::vector< cv::Point > VectorPoints, cv::Mat &dst)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+D\+::\+Polyfit (
+\begin{DoxyParamCaption}
+\item[{cv\+::vector$<$ cv\+::\+Point $>$}]{Vector\+Points, }
+\item[{cv\+::\+Mat \&}]{dst}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceLD_a15dac98f5e6a2722f83342030086fb0f}{}\label{namespaceLD_a15dac98f5e6a2722f83342030086fb0f}
+here we take a vector of points, and a destination matrix on wich we will save the coefficients of the polynom found by polyfit we create 2 Mats(matrix), with 1 column and z rows where z=the number of elements of the Vector\+Points
+
+dst will be a matrix of 1 column and grade+1 where grade=grade of the polynom
+
+for each element of the array, we save its x on the src\+\_\+x matrix and its y on the src\+\_\+y matrix
+
+we apply polyfit, wich will result in 4 coefficients saved in dst 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceLD_a15dac98f5e6a2722f83342030086fb0f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{LD@{LD}!R\+OI@{R\+OI}}
+\index{R\+OI@{R\+OI}!LD@{LD}}
+\subsubsection[{\texorpdfstring{R\+O\+I(cv\+::\+Mat \&img1, cv\+::\+Mat \&img2)}{ROI(cv::Mat &img1, cv::Mat &img2)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+D\+::\+R\+OI (
+\begin{DoxyParamCaption}
+\item[{cv\+::\+Mat \&}]{img1, }
+\item[{cv\+::\+Mat \&}]{img2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceLD_a2dbaaf7a39ee2d6d46c4f67cae71f651}{}\label{namespaceLD_a2dbaaf7a39ee2d6d46c4f67cae71f651}
+Region of interest we take img1 and img2 , crop the region we need from them and discard the rest(make black the parts that we dont need) array of points
+
+The points O\+R\+D\+ER is important
+
+we push back the points that delimitates the region wich interest us
+
+make an empty mask the dimensions of img1, C\+V\+\_\+8\+U\+C1=8bit pixel with 1 channel(white and black)
+
+Initialize the polygon delimited by the points with white
+
+create a new image by copying only the rectangle from the img
+
+$<$W\+H\+AT WE P\+A\+S\+TE
+
+form is now the part of mask1 that contains the R\+OI delimited by the points
+
+$<$ H\+OW WE P\+A\+S\+T\+E(\+In wich form)
+
+img\+R\+OI is the adress at wich we will paste the R\+OI
+
+$<$ W\+H\+E\+RE WE P\+A\+S\+TE
+
+copy roi(the part that we need from the entire photo) to\+: img\+R\+OI(the adrees=the place),form=the form in wich we want it to pe pasted
+
+now we copy the result in img1 and img2, wich will remain modified 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceLD_a2dbaaf7a39ee2d6d46c4f67cae71f651_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{LD@{LD}!Sliding\+Window@{Sliding\+Window}}
+\index{Sliding\+Window@{Sliding\+Window}!LD@{LD}}
+\subsubsection[{\texorpdfstring{Sliding\+Window(cv\+::vector$<$ cv\+::\+Point $>$ \&left, cv\+::vector$<$ cv\+::\+Point $>$ \&right, cv\+::\+Mat img, cv\+::\+Mat \&img3)}{SlidingWindow(cv::vector< cv::Point > &left, cv::vector< cv::Point > &right, cv::Mat img, cv::Mat &img3)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+D\+::\+Sliding\+Window (
+\begin{DoxyParamCaption}
+\item[{cv\+::vector$<$ cv\+::\+Point $>$ \&}]{left, }
+\item[{cv\+::vector$<$ cv\+::\+Point $>$ \&}]{right, }
+\item[{cv\+::\+Mat}]{img, }
+\item[{cv\+::\+Mat \&}]{img3}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceLD_a1d90a5e486727d57152101c7c6e2c6b2}{}\label{namespaceLD_a1d90a5e486727d57152101c7c6e2c6b2}
+This function will recieve two vector of points that will store the detected points of the lanes(left and right) using sliding window on the img(the third parameter of this function), wich will be a sobel image. The forth parameter is just am image on wich we draw the windows, to see them(is not essential) We will use the existing function Hitogram to determin the procent of white pixels in each Sliding\+Window, and the peak(or peaks) we will first apply Sliding\+Window on the img, so we see the 2 starting points of the lanes.\+Those will be the middles of the 2 windows
+
+this pointer will be a vector with 1 or 2 parameters returned by the function Histogram
+
+we apply the histogram to 30\% of the bottom of img, and expect 2 points from it (Starting\+Points\+Percentage is a \#define with the value 30)!!
+
+a and b will be the 2 starting points(columns)
+
+first points that marks the beginning of the first sliding windows. We put them in the arrays
+
+sliding window will be 5\% of img.\+cols, Sliding\+Window\+Width (another \#define) we use only the 2 sliding windows from this row, and call Histogram for them, to see where the middle will be,then we add them to the vectors
+
+parameters for the rectangle
+
+starting X point of the rectangle. We test if the rectangle is out of the img, then we put t to begin at pixel 1, because a rectangle cant exist outside of one image
+
+Starting Y point of the rectangle
+
+width of the rectangle
+
+height of the rectangle
+
+we create the left rectangle\+: r1
+
+The parameters for the right rectangle
+
+we create the right rectangle
+
+we call Histogram function for the left window. img(r1) means we call the function giving only the rectangle part of img
+
+//if the peak of the window is on one of the extremities , that means the window does not contain white, so we do not update the \char`\"{}a\char`\"{} variable
+
+we call Histogram function for the right window.
+
+we put the points in the vectors. The point is X= a or b, and Y=Between the rows. (If the for gives \char`\"{}i\char`\"{} values that are every 5\% of the rows, we give it another 2.\+5\% that is img.\+rows/40, so it will be 5\%+2.5\%=7.\+5\%.....)See the paper in the Drawer, I draw this
+
+We draw the rectangles(sliding windows) on another image, ant then we will imgshow it in Main 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceLD_a1d90a5e486727d57152101c7c6e2c6b2_icgraph}
+\end{center}
+\end{figure}
+
+

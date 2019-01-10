@@ -1,0 +1,276 @@
+\hypertarget{classMatrix}{}\section{Matrix$<$ T $>$ Class Template Reference}
+\label{classMatrix}\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+
+
+{\ttfamily \#include $<$perspective.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMatrix_a0a749e62910dfcc12d8b00407ef0a2a2}{Matrix} ()
+\item 
+\hyperlink{classMatrix_ad5eddf41615ebc5c9f5591a35db1e933}{$\sim$\+Matrix} ()
+\item 
+\hyperlink{classMatrix_a25008f0e9c92c7c183f6078e811612e9}{Matrix} (unsigned char N, unsigned char M)
+\item 
+unsigned char \hyperlink{classMatrix_a304418db8e8fb7aa03692bfeb796dff5}{rows} ()
+\item 
+unsigned char \hyperlink{classMatrix_ae8619d1c450cfb9350f4e7dea15829cf}{cols} ()
+\item 
+void \hyperlink{classMatrix_ab8835ab2ead30efc83a08a57b7fbc0b5}{set\+Rows} (unsigned char)
+\item 
+void \hyperlink{classMatrix_a4c10fcb50c25493c4aa659afb40af389}{set\+Cols} (unsigned char)
+\item 
+void \hyperlink{classMatrix_a93ef7d0fc33aa6285abf13d4ad68de51}{set\+Value} (unsigned char N, unsigned char M, T value)
+\item 
+void \hyperlink{classMatrix_acc444f9feaad1c768ed3909fd1620b2f}{set\+Value} (unsigned char N, unsigned char M, T $\ast$v)
+\item 
+T \hyperlink{classMatrix_a5ad4a5158889b177b4e0e3c467166b50}{get\+Value} (unsigned char, unsigned char)
+\item 
+\hyperlink{classMatrix}{Matrix} \hyperlink{classMatrix_a8415b3b7a2ce35d7e0847d7a20844524}{operator=} (const \hyperlink{classMatrix}{Matrix} \&)
+\item 
+\hyperlink{classMatrix}{Matrix} \hyperlink{classMatrix_a35591b3f6accbf593620e7bd370eb046}{operator$\ast$} (const \hyperlink{classMatrix}{Matrix} \&)
+\item 
+\hyperlink{classMatrix}{Matrix} \hyperlink{classMatrix_a1b247e6d18a403a2cc4a27e72e7dc82b}{operator+} (const \hyperlink{classMatrix}{Matrix} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{Matrix()}{Matrix()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template {\bf Matrix}$<$ T $>$\+::{\bf Matrix} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMatrix_a0a749e62910dfcc12d8b00407ef0a2a2}{}\label{classMatrix_a0a749e62910dfcc12d8b00407ef0a2a2}
+Defaul \hyperlink{classMatrix}{Matrix} constructor.
+
+Constructor which creates a 2x2 size \hyperlink{classMatrix}{Matrix} and initializes all values with 0.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{classMatrix_a0a749e62910dfcc12d8b00407ef0a2a2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!````~Matrix@{$\sim$\+Matrix}}
+\index{````~Matrix@{$\sim$\+Matrix}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{$\sim$\+Matrix()}{~Matrix()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template {\bf Matrix}$<$ T $>$\+::$\sim${\bf Matrix} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMatrix_ad5eddf41615ebc5c9f5591a35db1e933}{}\label{classMatrix_ad5eddf41615ebc5c9f5591a35db1e933}
+Default \hyperlink{classMatrix}{Matrix} destructor.
+
+Destructor deletes the matrix\+Values data and resets the pointer to N\+U\+LL.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{classMatrix_ad5eddf41615ebc5c9f5591a35db1e933_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{Matrix(unsigned char N, unsigned char M)}{Matrix(unsigned char N, unsigned char M)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template {\bf Matrix}$<$ T $>$\+::{\bf Matrix} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{N, }
+\item[{unsigned char}]{M}
+\end{DoxyParamCaption}
+)}\hypertarget{classMatrix_a25008f0e9c92c7c183f6078e811612e9}{}\label{classMatrix_a25008f0e9c92c7c183f6078e811612e9}
+\hyperlink{classMatrix}{Matrix} constructor with size NxM.
+
+Constructor which creates an NxM size \hyperlink{classMatrix}{Matrix} and initializes all values with 0.
+
+\subsection{Member Function Documentation}
+\index{Matrix@{Matrix}!cols@{cols}}
+\index{cols@{cols}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{cols()}{cols()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template unsigned char {\bf Matrix}$<$ T $>$\+::cols (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMatrix_ae8619d1c450cfb9350f4e7dea15829cf}{}\label{classMatrix_ae8619d1c450cfb9350f4e7dea15829cf}
+Get cols function for \hyperlink{classMatrix}{Matrix} class.
+
+The cols function returns the number of columns of the matrix.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classMatrix_ae8619d1c450cfb9350f4e7dea15829cf_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{get\+Value(unsigned char, unsigned char)}{getValue(unsigned char, unsigned char)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template int {\bf Matrix}$<$ T $>$\+::get\+Value (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{char, }
+\item[{unsigned}]{char}
+\end{DoxyParamCaption}
+)}\hypertarget{classMatrix_a5ad4a5158889b177b4e0e3c467166b50}{}\label{classMatrix_a5ad4a5158889b177b4e0e3c467166b50}
+Get the value of a single member in the \hyperlink{classMatrix}{Matrix}.
+
+The get\+Value function returns the value of the matrix\+Values\mbox{[}N$\ast$c + M\mbox{]} array. 
+\begin{DoxyParams}{Parameters}
+{\em N} & is the row position of the member. \\
+\hline
+{\em M} & is the column position of the member.\\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{classMatrix_a5ad4a5158889b177b4e0e3c467166b50_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator$\ast$(const Matrix \&)}{operator*(const Matrix &)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Matrix} {\bf Matrix}$<$ T $>$\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix}$<$ T $>$ \&}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMatrix_a35591b3f6accbf593620e7bd370eb046}{}\label{classMatrix_a35591b3f6accbf593620e7bd370eb046}
+\index{Matrix@{Matrix}!operator+@{operator+}}
+\index{operator+@{operator+}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator+(const Matrix \&)}{operator+(const Matrix &)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Matrix} {\bf Matrix}$<$ T $>$\+::operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix}$<$ T $>$ \&}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMatrix_a1b247e6d18a403a2cc4a27e72e7dc82b}{}\label{classMatrix_a1b247e6d18a403a2cc4a27e72e7dc82b}
+\index{Matrix@{Matrix}!operator=@{operator=}}
+\index{operator=@{operator=}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator=(const Matrix \&)}{operator=(const Matrix &)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Matrix} {\bf Matrix}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix}$<$ T $>$ \&}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMatrix_a8415b3b7a2ce35d7e0847d7a20844524}{}\label{classMatrix_a8415b3b7a2ce35d7e0847d7a20844524}
+\index{Matrix@{Matrix}!rows@{rows}}
+\index{rows@{rows}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{rows()}{rows()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template unsigned char {\bf Matrix}$<$ T $>$\+::rows (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMatrix_a304418db8e8fb7aa03692bfeb796dff5}{}\label{classMatrix_a304418db8e8fb7aa03692bfeb796dff5}
+Get rows function for \hyperlink{classMatrix}{Matrix} class.
+
+The rows function returns the number of rows of the matrix.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{classMatrix_a304418db8e8fb7aa03692bfeb796dff5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!set\+Cols@{set\+Cols}}
+\index{set\+Cols@{set\+Cols}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{set\+Cols(unsigned char)}{setCols(unsigned char)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template void {\bf Matrix}$<$ T $>$\+::set\+Cols (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{char}
+\end{DoxyParamCaption}
+)}\hypertarget{classMatrix_a4c10fcb50c25493c4aa659afb40af389}{}\label{classMatrix_a4c10fcb50c25493c4aa659afb40af389}
+Set columns function for \hyperlink{classMatrix}{Matrix} class.
+
+The set\+Cols function sets c with the given parameter value. 
+\begin{DoxyParams}{Parameters}
+{\em col\+\_\+value} & is the number of columns for this matrix object.\\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{classMatrix_a4c10fcb50c25493c4aa659afb40af389_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!set\+Rows@{set\+Rows}}
+\index{set\+Rows@{set\+Rows}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{set\+Rows(unsigned char)}{setRows(unsigned char)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template void {\bf Matrix}$<$ T $>$\+::set\+Rows (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{char}
+\end{DoxyParamCaption}
+)}\hypertarget{classMatrix_ab8835ab2ead30efc83a08a57b7fbc0b5}{}\label{classMatrix_ab8835ab2ead30efc83a08a57b7fbc0b5}
+Set rows function for \hyperlink{classMatrix}{Matrix} class.
+
+The set\+Rows function sets r with the given parameter value. 
+\begin{DoxyParams}{Parameters}
+{\em row\+\_\+value} & is the number of rows for this matrix object.\\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{classMatrix_ab8835ab2ead30efc83a08a57b7fbc0b5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!set\+Value@{set\+Value}}
+\index{set\+Value@{set\+Value}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{set\+Value(unsigned char N, unsigned char M, T value)}{setValue(unsigned char N, unsigned char M, T value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Matrix}$<$ T $>$\+::set\+Value (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{N, }
+\item[{unsigned char}]{M, }
+\item[{T}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classMatrix_a93ef7d0fc33aa6285abf13d4ad68de51}{}\label{classMatrix_a93ef7d0fc33aa6285abf13d4ad68de51}
+Set the value of a single member in the \hyperlink{classMatrix}{Matrix}.
+
+The set\+Value function simply overwrites the value of the \hyperlink{classMatrix}{Matrix} at position \mbox{[}N,M\mbox{]} with \char`\"{}value\+\_\+par\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em N} & is the row position of the member. \\
+\hline
+{\em M} & is the column position of the member. \\
+\hline
+{\em value\+\_\+par} & is the actual value.\\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classMatrix_a93ef7d0fc33aa6285abf13d4ad68de51_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!set\+Value@{set\+Value}}
+\index{set\+Value@{set\+Value}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{set\+Value(unsigned char N, unsigned char M, T $\ast$v)}{setValue(unsigned char N, unsigned char M, T *v)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Matrix}$<$ T $>$\+::set\+Value (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{N, }
+\item[{unsigned char}]{M, }
+\item[{T $\ast$}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classMatrix_acc444f9feaad1c768ed3909fd1620b2f}{}\label{classMatrix_acc444f9feaad1c768ed3909fd1620b2f}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/uidg6179/\+Work/\+D\+S\+P/common/\hyperlink{perspective_8h}{perspective.\+h}\item 
+/home/uidg6179/\+Work/\+D\+S\+P/common/\hyperlink{perspective_8cpp}{perspective.\+cpp}\end{DoxyCompactItemize}

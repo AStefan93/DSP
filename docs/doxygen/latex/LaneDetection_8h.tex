@@ -1,0 +1,102 @@
+\hypertarget{LaneDetection_8h}{}\section{/home/uidg6179/\+Work/\+D\+S\+P/external/\+Lane\+Detection-\/1/include/\+Lane\+Detection.h File Reference}
+\label{LaneDetection_8h}\index{/home/uidg6179/\+Work/\+D\+S\+P/external/\+Lane\+Detection-\/1/include/\+Lane\+Detection.\+h@{/home/uidg6179/\+Work/\+D\+S\+P/external/\+Lane\+Detection-\/1/include/\+Lane\+Detection.\+h}}
+
+
+Lane Detection Header.  
+
+
+{\ttfamily \#include $<$opencv2/core/core.\+hpp$>$}\\*
+{\ttfamily \#include $<$opencv2/imgproc/imgproc.\+hpp$>$}\\*
+{\ttfamily \#include $<$opencv2/highgui/highgui.\+hpp$>$}\\*
+{\ttfamily \#include $<$opencv2/contrib/contrib.\+hpp$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$dsp\+\_\+typedef.\+h$>$}\\*
+Include dependency graph for Lane\+Detection.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LaneDetection_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LaneDetection_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceLD}{LD}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{LaneDetection_8h_ab8a53d29ecef21e1c95f1508188703f6}{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+G\+R\+A\+Y\+S\+C\+A\+LE}~(1)
+\item 
+\#define \hyperlink{LaneDetection_8h_ae599f9656696eb36f3b475ddff44236c}{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+B\+I\+N\+A\+RY}~(0)
+\item 
+\#define \hyperlink{LaneDetection_8h_a7a9474d654dd6c83e7ba11db2e42b30b}{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+B\+I\+R\+D\+S\+E\+Y\+E\+V\+I\+EW}~(0)
+\item 
+\#define \hyperlink{LaneDetection_8h_aac73297f704a81e4d89e2ba892d6c15d}{L\+D\+\_\+\+P\+R\+I\+N\+T\+\_\+\+S\+L\+I\+D\+I\+N\+G\+W\+I\+N\+D\+O\+WS}~(0)
+\item 
+\#define \hyperlink{LaneDetection_8h_aa51ea781680dbf50f0085f54d32ab701}{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+S\+O\+B\+EL}~(0)
+\item 
+\#define \hyperlink{LaneDetection_8h_a340f02815197db15ffabbcaf9adb75a9}{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+G\+A\+U\+S\+S\+F\+I\+L\+T\+ER}~(0)
+\item 
+\#define \hyperlink{LaneDetection_8h_ae5dbbbec6ce12d107dc53a0441069b90}{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+R\+O\+I\+M\+A\+SK}~(0)
+\item 
+\#define \hyperlink{LaneDetection_8h_a1acb08af7a77f878d482e855074c9254}{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+R\+OI}~(0)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{namespaceLD_ac725c61b114fcf28e0fc6ddf79b22d66}{L\+D\+::\+Lane\+Detection} (cv\+::\+Mat Original\+Img)
+\begin{DoxyCompactList}\small\item\em Lane Detection Function. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceLD_a15dac98f5e6a2722f83342030086fb0f}{L\+D\+::\+Polyfit} (cv\+::vector$<$ cv\+::\+Point $>$ Vector\+Points, cv\+::\+Mat \&dst)
+\item 
+void \hyperlink{namespaceLD_a1d90a5e486727d57152101c7c6e2c6b2}{L\+D\+::\+Sliding\+Window} (cv\+::vector$<$ cv\+::\+Point $>$ \&left, cv\+::vector$<$ cv\+::\+Point $>$ \&right, cv\+::\+Mat img, cv\+::\+Mat \&img3)
+\item 
+void \hyperlink{namespaceLD_a2dbaaf7a39ee2d6d46c4f67cae71f651}{L\+D\+::\+R\+OI} (cv\+::\+Mat \&img1, cv\+::\+Mat \&img2)
+\item 
+void \hyperlink{namespaceLD_ad43fbc5868819b9d2b70f00ed45142f4}{L\+D\+::\+Horizontal\+\_\+\+Sobel} (cv\+::\+Mat img, cv\+::\+Mat \&img1, cv\+::\+Mat \&img2)
+\item 
+void \hyperlink{namespaceLD_a57364c31ed52bfa2b19a53ba9a6034f5}{L\+D\+::\+Find\+Points\+Lane} (cv\+::\+Mat \&Original\+Img, cv\+::\+Mat img1, cv\+::\+Mat img2, cv\+::vector$<$ cv\+::\+Point $>$ \&Outer\+Left, cv\+::vector$<$ cv\+::\+Point $>$ \&Inner\+Left, cv\+::vector$<$ cv\+::\+Point $>$ \&Inner\+Right, cv\+::vector$<$ cv\+::\+Point $>$ \&Outer\+Right)
+\item 
+cv\+::\+Mat \hyperlink{namespaceLD_aec4eb31efafac4e84d22dfd0b60e4e73}{L\+D\+::\+Birds\+Eye\+View} (cv\+::\+Mat img)
+\item 
+int $\ast$ \hyperlink{namespaceLD_a488c419fda62a06bb022fa025f4f3307}{L\+D\+::\+Lane\+\_\+\+Histogram} (cv\+::\+Mat img, int procent, int peaks)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Lane Detection Header. 
+
+This file includes all the other resources the Lane Detection project requires. 
+
+\subsection{Macro Definition Documentation}
+\index{Lane\+Detection.\+h@{Lane\+Detection.\+h}!L\+D\+\_\+\+P\+R\+I\+N\+T\+\_\+\+S\+L\+I\+D\+I\+N\+G\+W\+I\+N\+D\+O\+WS@{L\+D\+\_\+\+P\+R\+I\+N\+T\+\_\+\+S\+L\+I\+D\+I\+N\+G\+W\+I\+N\+D\+O\+WS}}
+\index{L\+D\+\_\+\+P\+R\+I\+N\+T\+\_\+\+S\+L\+I\+D\+I\+N\+G\+W\+I\+N\+D\+O\+WS@{L\+D\+\_\+\+P\+R\+I\+N\+T\+\_\+\+S\+L\+I\+D\+I\+N\+G\+W\+I\+N\+D\+O\+WS}!Lane\+Detection.\+h@{Lane\+Detection.\+h}}
+\subsubsection[{\texorpdfstring{L\+D\+\_\+\+P\+R\+I\+N\+T\+\_\+\+S\+L\+I\+D\+I\+N\+G\+W\+I\+N\+D\+O\+WS}{LD_PRINT_SLIDINGWINDOWS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+D\+\_\+\+P\+R\+I\+N\+T\+\_\+\+S\+L\+I\+D\+I\+N\+G\+W\+I\+N\+D\+O\+WS~(0)}\hypertarget{LaneDetection_8h_aac73297f704a81e4d89e2ba892d6c15d}{}\label{LaneDetection_8h_aac73297f704a81e4d89e2ba892d6c15d}
+\index{Lane\+Detection.\+h@{Lane\+Detection.\+h}!L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+B\+I\+N\+A\+RY@{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+B\+I\+N\+A\+RY}}
+\index{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+B\+I\+N\+A\+RY@{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+B\+I\+N\+A\+RY}!Lane\+Detection.\+h@{Lane\+Detection.\+h}}
+\subsubsection[{\texorpdfstring{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+B\+I\+N\+A\+RY}{LD_SHOW_BINARY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+B\+I\+N\+A\+RY~(0)}\hypertarget{LaneDetection_8h_ae599f9656696eb36f3b475ddff44236c}{}\label{LaneDetection_8h_ae599f9656696eb36f3b475ddff44236c}
+\index{Lane\+Detection.\+h@{Lane\+Detection.\+h}!L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+B\+I\+R\+D\+S\+E\+Y\+E\+V\+I\+EW@{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+B\+I\+R\+D\+S\+E\+Y\+E\+V\+I\+EW}}
+\index{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+B\+I\+R\+D\+S\+E\+Y\+E\+V\+I\+EW@{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+B\+I\+R\+D\+S\+E\+Y\+E\+V\+I\+EW}!Lane\+Detection.\+h@{Lane\+Detection.\+h}}
+\subsubsection[{\texorpdfstring{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+B\+I\+R\+D\+S\+E\+Y\+E\+V\+I\+EW}{LD_SHOW_BIRDSEYEVIEW}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+B\+I\+R\+D\+S\+E\+Y\+E\+V\+I\+EW~(0)}\hypertarget{LaneDetection_8h_a7a9474d654dd6c83e7ba11db2e42b30b}{}\label{LaneDetection_8h_a7a9474d654dd6c83e7ba11db2e42b30b}
+\index{Lane\+Detection.\+h@{Lane\+Detection.\+h}!L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+G\+A\+U\+S\+S\+F\+I\+L\+T\+ER@{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+G\+A\+U\+S\+S\+F\+I\+L\+T\+ER}}
+\index{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+G\+A\+U\+S\+S\+F\+I\+L\+T\+ER@{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+G\+A\+U\+S\+S\+F\+I\+L\+T\+ER}!Lane\+Detection.\+h@{Lane\+Detection.\+h}}
+\subsubsection[{\texorpdfstring{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+G\+A\+U\+S\+S\+F\+I\+L\+T\+ER}{LD_SHOW_GAUSSFILTER}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+G\+A\+U\+S\+S\+F\+I\+L\+T\+ER~(0)}\hypertarget{LaneDetection_8h_a340f02815197db15ffabbcaf9adb75a9}{}\label{LaneDetection_8h_a340f02815197db15ffabbcaf9adb75a9}
+\index{Lane\+Detection.\+h@{Lane\+Detection.\+h}!L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+G\+R\+A\+Y\+S\+C\+A\+LE@{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+G\+R\+A\+Y\+S\+C\+A\+LE}}
+\index{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+G\+R\+A\+Y\+S\+C\+A\+LE@{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+G\+R\+A\+Y\+S\+C\+A\+LE}!Lane\+Detection.\+h@{Lane\+Detection.\+h}}
+\subsubsection[{\texorpdfstring{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+G\+R\+A\+Y\+S\+C\+A\+LE}{LD_SHOW_GRAYSCALE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+G\+R\+A\+Y\+S\+C\+A\+LE~(1)}\hypertarget{LaneDetection_8h_ab8a53d29ecef21e1c95f1508188703f6}{}\label{LaneDetection_8h_ab8a53d29ecef21e1c95f1508188703f6}
+\index{Lane\+Detection.\+h@{Lane\+Detection.\+h}!L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+R\+OI@{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+R\+OI}}
+\index{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+R\+OI@{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+R\+OI}!Lane\+Detection.\+h@{Lane\+Detection.\+h}}
+\subsubsection[{\texorpdfstring{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+R\+OI}{LD_SHOW_ROI}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+R\+OI~(0)}\hypertarget{LaneDetection_8h_a1acb08af7a77f878d482e855074c9254}{}\label{LaneDetection_8h_a1acb08af7a77f878d482e855074c9254}
+\index{Lane\+Detection.\+h@{Lane\+Detection.\+h}!L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+R\+O\+I\+M\+A\+SK@{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+R\+O\+I\+M\+A\+SK}}
+\index{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+R\+O\+I\+M\+A\+SK@{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+R\+O\+I\+M\+A\+SK}!Lane\+Detection.\+h@{Lane\+Detection.\+h}}
+\subsubsection[{\texorpdfstring{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+R\+O\+I\+M\+A\+SK}{LD_SHOW_ROIMASK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+R\+O\+I\+M\+A\+SK~(0)}\hypertarget{LaneDetection_8h_ae5dbbbec6ce12d107dc53a0441069b90}{}\label{LaneDetection_8h_ae5dbbbec6ce12d107dc53a0441069b90}
+\index{Lane\+Detection.\+h@{Lane\+Detection.\+h}!L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+S\+O\+B\+EL@{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+S\+O\+B\+EL}}
+\index{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+S\+O\+B\+EL@{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+S\+O\+B\+EL}!Lane\+Detection.\+h@{Lane\+Detection.\+h}}
+\subsubsection[{\texorpdfstring{L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+S\+O\+B\+EL}{LD_SHOW_SOBEL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+D\+\_\+\+S\+H\+O\+W\+\_\+\+S\+O\+B\+EL~(0)}\hypertarget{LaneDetection_8h_aa51ea781680dbf50f0085f54d32ab701}{}\label{LaneDetection_8h_aa51ea781680dbf50f0085f54d32ab701}
