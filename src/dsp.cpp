@@ -25,9 +25,6 @@
 ///Image resize factor to improve processing speed. This variable should be used in most vision components.
 const double imgresize = 0.5;
 
-cv::Mat* p_frame;
-
-
 #if USE_VIDEO
 
 // the points for the video LCF_CameraView.avis
@@ -215,8 +212,8 @@ int main(int argc, char *argv[])
 
     generic_DSP.image_count = 0;
     generic_DSP.M = getPerspectiveTransform(src_vertices, dst_vertices); //Get birds eye view transform
-    p_frame = new cv::Mat;
-
+    cv::Mat p_frame; 
+    
     #if USE_VIDEO
     {//video input
         const char* videofilename = "../../../Work/Samples/LCF_CameraView.avi";
@@ -228,34 +225,34 @@ int main(int argc, char *argv[])
             return 0;
         }
 
-        cap >> *p_frame;//read first frame to  know the width and height
+        cap >> p_frame;//read first frame to  know the width and height
 
         //for recreating the video with the modified frames
-        //cv::VideoWriter out_capture("../../road_out.avi", CV_FOURCC('M','J','P','G'), 25.0, cv::Size((*p_frame).cols ,(*p_frame).rows));
+        //cv::VideoWriter out_capture("../../road_out.avi", CV_FOURCC('M','J','P','G'), 25.0, cv::Size((p_frame).cols ,(p_frame).rows));
 
         // read frames until end of video:
         do{
 
-            if((*p_frame).empty()){
+            if((p_frame).empty()){
                 std::cout << "frame is empty or could not be read" << std::endl;
                 continue;
             }
 
             //resize image to improve performance
-            cv::resize(*p_frame,*p_frame,cv::Size(),imgresize,imgresize);
+            cv::resize(p_frame,p_frame,cv::Size(),imgresize,imgresize);
 
             //3 separate threads for parallel processing of the same frame
             pthread_t thread1, thread2;
             int  iret1,iret2;
 
-            iret1 = pthread_create( &thread1, NULL, LaneDetection_Thread, (void*) p_frame);
+            iret1 = pthread_create( &thread1, NULL, LaneDetection_Thread, (void*) &p_frame);
             if(iret1)
             {
                 fprintf(stderr,"error - pthread_create() return code: %d\n",iret1);
                 exit(EXIT_FAILURE);
             }
 
-            iret2 = pthread_create( &thread2, NULL, ObjectDetection_Thread, (void*) p_frame);
+            iret2 = pthread_create( &thread2, NULL, ObjectDetection_Thread, (void*) &p_frame);
             if(iret2)
             {
                 fprintf(stderr,"error - pthread_create() return code: %d\n",iret2);
@@ -270,19 +267,19 @@ int main(int argc, char *argv[])
 
 
             //DRAW OBJECTS
-            DSP::FillLanes(p_frame, output_LD, 2);
+            DSP::FillLanes(&p_frame, output_LD, 2);
 
             //save to video
-            //out_capture.write((*p_frame));
+            //out_capture.write((p_frame));
 
             //optional to show frame with detected objects/lanes/signs
             cv::namedWindow( "ld", CV_WINDOW_NORMAL );
-            cv::imshow("ld", *p_frame);
+            cv::imshow("ld", p_frame);
             cv::waitKey(1);
             generic_DSP.image_count += 1;
             std::cout << generic_DSP.image_count << std::endl;
 
-        }while(cap.read(*p_frame) && (generic_DSP.image_count < 3300));
+        }while(cap.read(p_frame) && (generic_DSP.image_count < 3300));
     }
     //end video input
     #else
@@ -297,30 +294,30 @@ int main(int argc, char *argv[])
             return 0;
         }
 
-        sequence >> *p_frame;//read first frame to  know the width and height
+        sequence >> p_frame;//read first frame to  know the width and height
 
         // read frames until end of video:
         do{
 
-            if((*p_frame).empty()){
+            if((p_frame).empty()){
                 std::cout << "frame is empty or could not be read" << std::endl;
                 continue;
             }
 
-            cv::resize(*p_frame,*p_frame,cv::Size(),imgresize,imgresize);
+            cv::resize(p_frame,p_frame,cv::Size(),imgresize,imgresize);
 
             //separate threads for parallel processing of the same frame
             pthread_t thread1, thread2;
             int  iret1,iret2;
 
-            iret1 = pthread_create( &thread1, NULL, LaneDetection_Thread, (void*) p_frame);
+            iret1 = pthread_create( &thread1, NULL, LaneDetection_Thread, (void*) &p_frame);
             if(iret1)
             {
                 fprintf(stderr,"error - pthread_create() return code: %d\n",iret1);
                 exit(EXIT_FAILURE);
             }
 
-            iret2 = pthread_create( &thread2, NULL, ObjectDetection_Thread, (void*) p_frame);
+            iret2 = pthread_create( &thread2, NULL, ObjectDetection_Thread, (void*) &p_frame);
             if(iret2)
             {
                 fprintf(stderr,"error - pthread_create() return code: %d\n",iret2);
@@ -334,16 +331,16 @@ int main(int argc, char *argv[])
             //TODO: merge the info in env model
 
             //draw lanes
-            DSP::FillLanes(p_frame, output_LD, 2);
+            DSP::FillLanes(&p_frame, output_LD, 2);
 
             cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE );// Create a window for display.
             //cv::imshow("Lane Detection", image_ld);
-            cv::imshow("Display window", *p_frame);
+            cv::imshow("Display window", p_frame);
             cv::waitKey(30);
             generic_DSP.image_count += 1;
             std::cout << generic_DSP.image_count << std::endl;
 
-        }while(sequence.read(*p_frame));
+        }while(sequence.read(p_frame));
     }
     //end data folder with individual frames input
     #endif
