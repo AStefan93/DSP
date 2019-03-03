@@ -287,7 +287,7 @@ int main(int argc, char *argv[])
     //end video input
     #else
     {//data folder with individual frames input
-        const char* data_frames = "../../../Work/Kitti/2011_09_26_drive_0015_extract/2011_09_26/2011_09_26_drive_0015_extract/image_00/data/%10d.png";
+        const char* data_frames = "~/Work/Kitti/2011_09_26_drive_0015_extract/2011_09_26/2011_09_26_drive_0015_extract/image_00/data/%10d.png";
         //aquire frames
 
         cv::VideoCapture sequence(data_frames); // open image sequence
