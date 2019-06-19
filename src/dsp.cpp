@@ -46,6 +46,8 @@ const cv::Point2f dst_vertices[4] = {cv::Point(200*imgresize, 2*imgresize), cv::
 
 t_generic_DSP generic_DSP;
 t_output_LD output_LD;
+t_output_KalmanLD output_KalmanLD;
+const t_processModel_LD processModelLD;
 
 ///TODO: Object Detection Test Function. To be removed.
 unsigned int ObjectDetection(cv::Mat image){
@@ -188,6 +190,102 @@ void DSP::FillLanes(cv::Mat* frame, t_output_LD lanes, unsigned int thickness){
 
 }
 
+/** \brief Fill Lanes is an LD Drawing Function.
+ *
+ *  This function draws over the original frame regions that delimit the detected lane.
+ *  \param frame is a pointer to the image matrix of the current frame.
+ *  \param lanes is the structure with the coefficients of the detected lane markers.
+ *  \param thickness is the thickness in pixels of the drawn lines.
+ */
+void DSP::FillLanes(cv::Mat* frame, t_output_KalmanLD lanes, unsigned int thickness){
+
+    cv::Mat tempImage;
+    tempImage = cv::Mat::zeros(400*imgresize,750*imgresize,CV_8UC3);//300+100 to fill an entire marker
+
+    float a,b,c,d;
+    std::vector<cv::Point> points_outer_left;
+    std::vector<cv::Point> points_inner_left;
+    std::vector<cv::Point> points_inner_right;
+    std::vector<cv::Point> points_outer_right;
+
+    cv::Scalar purple = cv::Scalar(125,0,125);
+    cv::Scalar blue = cv::Scalar(255,0,0);
+    cv::Scalar green = cv::Scalar(0,125,0);
+
+
+    //outer left lane
+    a=lanes.priorOCL.at<float>(3,0);
+    b=lanes.priorOCL.at<float>(2,0);
+    c=lanes.priorOCL.at<float>(1,0);
+    d=lanes.priorOCL.at<float>(0,0);
+    // for each row of the Original img(wich will be the x)
+    // we will calculate the y by using the 4 coefficients of the polynom
+    for(int x=0;x<tempImage.rows-1;x++)
+    {
+        float y=a*pow(x,3)+b*pow(x,2)+c*x+d;
+        points_outer_left.push_back( cv::Point(y,x));
+        //cv::line(tempImage,cv::Point(y,x),cv::Point(y,x),purple,thickness);
+
+    }
+    //inner left lane
+    a=lanes.priorICL.at<float>(3,0);
+    b=lanes.priorICL.at<float>(2,0);
+    c=lanes.priorICL.at<float>(1,0);
+    d=lanes.priorICL.at<float>(0,0);
+    // for each row of the Original img(wich will be the x)
+    // we will calculate the y by using the 4 coefficients of the polynom
+    for(int x=0;x<tempImage.rows-1;x++)
+    {
+        float y=a*pow(x,3)+b*pow(x,2)+c*x+d;
+        points_inner_left.push_back( cv::Point(y,x));
+        //cv::line(tempImage,cv::Point(y,x),cv::Point(y,x),purple,thickness);
+
+    }
+    //inner right lane
+    a=lanes.priorICR.at<float>(3,0);
+    b=lanes.priorICR.at<float>(2,0);
+    c=lanes.priorICR.at<float>(1,0);
+    d=lanes.priorICR.at<float>(0,0);
+    // for each row of the Original img(wich will be the x)
+    // we will calculate the y by using the 4 coefficients of the polynom
+    for(int x=0;x<tempImage.rows-1;x++)
+    {
+        float y=a*pow(x,3)+b*pow(x,2)+c*x+d;
+        points_inner_right.push_back( cv::Point(y,x));
+        //cv::line(tempImage,cv::Point(y,x),cv::Point(y,x),blue,thickness);
+
+    }
+    //outer right lane
+    a=lanes.priorOCR.at<float>(3,0);
+    b=lanes.priorOCR.at<float>(2,0);
+    c=lanes.priorOCR.at<float>(1,0);
+    d=lanes.priorOCR.at<float>(0,0);
+    // for each row of the Original img(wich will be the x)
+    // we will calculate the y by using the 4 coefficients of the polynom
+    for(int x=0;x<tempImage.rows-1;x++)
+    {
+        float y=a*pow(x,3)+b*pow(x,2)+c*x+d;
+        points_outer_right.push_back( cv::Point(y,x));
+        //cv::line(tempImage,cv::Point(y,x),cv::Point(y,x),blue,thickness);
+
+    }
+
+    for(int x=0;x<tempImage.rows-1;x++)
+    {
+
+        cv::line(tempImage,points_inner_left[x],points_outer_left[x],purple,thickness); //Draw left lane
+        cv::line(tempImage,points_inner_right[x],points_outer_right[x],blue,thickness); //Draw right lane
+        cv::line(tempImage,points_inner_left[x],points_inner_right[x],green,thickness); //Draw street in the middle
+
+    }
+
+    //warp the image back to real world view
+    cv::warpPerspective(tempImage, tempImage, generic_DSP.M.inv(), (*frame).size(), cv::INTER_LINEAR, cv::BORDER_CONSTANT);
+
+    (*frame) = (*frame) + tempImage;
+
+}
+
 void *LaneDetection_Thread( void *ptr_image )
 {
     generic_DSP.LD_Return_Value = LD::LaneDetection(*(cv::Mat *)ptr_image);
@@ -284,7 +382,8 @@ int main(int argc, char *argv[])
     //end video input
     #else
     {//data folder with individual frames input
-        const char* data_frames = "~/Work/Kitti/2011_09_26_drive_0015_extract/2011_09_26/2011_09_26_drive_0015_extract/image_00/data/%10d.png";
+        //const char* data_frames = "~/Work/Kitti/2011_09_26_drive_0015_extract/2011_09_26/2011_09_26_drive_0015_extract/image_00/data/%10d.png";
+        const char* data_frames = "/home/stefan/Work/Kitti/2011_09_26_drive_0015_extract/2011_09_26/2011_09_26_drive_0015_extract/image_00/data/%10d.png";
         //aquire frames
 
         cv::VideoCapture sequence(data_frames); // open image sequence
@@ -331,7 +430,8 @@ int main(int argc, char *argv[])
             //TODO: merge the info in env model
 
             //draw lanes
-            DSP::FillLanes(&p_frame, output_LD, 2);
+            DSP::FillLanes(&p_frame, output_KalmanLD, 2);
+//            DSP::FillLanes(&p_frame, output_LD, 2);
 
             cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE );// Create a window for display.
             //cv::imshow("Lane Detection", image_ld);

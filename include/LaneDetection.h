@@ -8,10 +8,10 @@
 #define LANEDETECTION_H
 
 #define LD_SHOW_GRAYSCALE (0)
-#define LD_SHOW_BINARY (1)
-#define LD_SHOW_BIRDSEYEVIEW (1)
-#define LD_PRINT_SLIDINGWINDOWS (1)
-#define LD_SHOW_SOBEL (1)
+#define LD_SHOW_BINARY (0)
+#define LD_SHOW_BIRDSEYEVIEW (0)
+#define LD_PRINT_SLIDINGWINDOWS (0)
+#define LD_SHOW_SOBEL (0)
 #define LD_SHOW_GAUSSFILTER (0)
 #define LD_SHOW_ROIMASK (0)
 #define LD_SHOW_ROI (0)
@@ -112,6 +112,20 @@ namespace LD{
      *  \param [out] img2 is the output grayscale filtered image.
      */
      void meanFilter(cv::Mat img1, cv::Mat img2); //Exercise 2 MEANFILTER
+     
+     /** \brief kalmanFilter applies a kalman filter on the polynomial coefficients of the lanes.
+     *
+     *  This function implements a basic kalman filter for the polynomial coefficients of the lanes.
+     *  The motion model of the coefficients is 0 + noise.
+     *  What is left is to choose the noise matrix of the motion model and the noise matrix of the measurement.
+     *  In the end it is a simple weighted average. 
+     *  \param [in] lCoef is the lane polynomial coefficient structure. 
+     *  \param [out] lCoefFltrd is the filtered lane polynomial coefficient structure. 
+     */
+     void kalmanFilter(t_output_LD lCoef, t_output_KalmanLD &lCoefFltrd);
+     void update(cv::Mat measurement, cv::Mat prior, cv::Mat &posterior, cv::Mat prior_P, cv::Mat &posterior_P, cv::Mat R);
+     void predict(cv::Mat posterior, cv::Mat posterior_P, cv::Mat &prior, cv::Mat &prior_P, cv::Mat Q);
+     
 }
 
 #endif //

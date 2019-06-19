@@ -44,6 +44,49 @@ void LD::meanFilter(cv::Mat img1, cv::Mat img2){
    //write code here
 }
 
+void LD::kalmanFilter(t_output_LD measurement, t_output_KalmanLD &kalmanOutput){
+
+    LD::update(measurement.OCL, kalmanOutput.priorOCL, kalmanOutput.posteriorOCL, kalmanOutput.prior_OCL_covariance, kalmanOutput.posterior_OCL_covariance, processModelLD.R);
+    LD::update(measurement.ICL, kalmanOutput.priorICL, kalmanOutput.posteriorICL, kalmanOutput.prior_ICL_covariance, kalmanOutput.posterior_ICL_covariance, processModelLD.R);
+    LD::update(measurement.OCR, kalmanOutput.priorOCR, kalmanOutput.posteriorOCR, kalmanOutput.prior_OCR_covariance, kalmanOutput.posterior_OCR_covariance, processModelLD.R);
+    LD::update(measurement.ICR, kalmanOutput.priorICR, kalmanOutput.posteriorICR, kalmanOutput.prior_ICR_covariance, kalmanOutput.posterior_ICR_covariance, processModelLD.R);
+
+    LD::predict(kalmanOutput.posteriorOCL, kalmanOutput.posterior_OCL_covariance, kalmanOutput.priorOCL, kalmanOutput.prior_OCL_covariance, processModelLD.Q);
+    LD::predict(kalmanOutput.posteriorICL, kalmanOutput.posterior_ICL_covariance, kalmanOutput.priorICL, kalmanOutput.prior_ICL_covariance, processModelLD.Q);
+    LD::predict(kalmanOutput.posteriorOCR, kalmanOutput.posterior_OCR_covariance, kalmanOutput.priorOCR, kalmanOutput.prior_OCR_covariance, processModelLD.Q);
+    LD::predict(kalmanOutput.posteriorICR, kalmanOutput.posterior_ICR_covariance, kalmanOutput.priorICR, kalmanOutput.prior_ICR_covariance, processModelLD.Q);
+
+}
+
+void LD::update(cv::Mat measurement, cv::Mat prior, cv::Mat &posterior, cv::Mat prior_P, cv::Mat &posterior_P, cv::Mat R){
+    
+    cv::Mat residual,S,K;
+    residual = measurement - prior;
+    S = prior_P + R;
+    K = prior_P*S.inv();
+    posterior = prior + K*residual;
+    posterior_P = prior_P - K*prior_P;
+
+    std::cout << "UPDATE" << std::endl;
+    std::cout << "measurement = " << measurement << std::endl;
+    std::cout << "posterior = " << posterior << std::endl;
+    std::cout << "prior = " << prior << std::endl;
+    std::cout << "posterior cov = " << posterior_P << std::endl;
+    std::cout << "prior cov = " << prior_P << std::endl;
+    std::cout << "kalman gain = " << K << std::endl;
+}
+
+void LD::predict(cv::Mat posterior, cv::Mat posterior_P, cv::Mat &prior, cv::Mat &prior_P, cv::Mat Q){
+
+    prior = posterior.clone();
+    prior_P = posterior_P + Q;
+    
+    std::cout <<"PREDICT" << std::endl;
+    std::cout << "prior = " << prior << std::endl;
+    std::cout << "prior cov = " << prior_P << std::endl;
+    
+}
+
 cv::Mat LD::BirdsEyeView(cv::Mat img)
 {
     // we create the dst picture that we will return(rows, cols, type)
@@ -230,13 +273,13 @@ void LD::polyfit_one(const cv::Mat& src_x, const cv::Mat& src_y, cv::Mat& dst, i
 
 void LD::Polyfit(std::vector<cv::Point> VectorPoints, cv::Mat &dst)
 {
-    // we create 2 Mats(matrix), with 1 column and z rows
+    // we create 2 Mats(matrix), with 1 column and z rows 
     // where z=the number of elements of the VectorPoints
     cv::Mat src_x = cv::Mat(VectorPoints.size(), 1, CV_32F);
     cv::Mat src_y = cv::Mat(VectorPoints.size(), 1, CV_32F);
     //dst will be a matrix of 1 column and grade+1
     // where grade=grade of the polynom
-    dst = cv::Mat(4, 1, CV_32F);
+    dst = cv::Mat(4, 1, CV_32FC1);
 
 
     // for each element of the array, we save its x on the src_x matrix
@@ -248,7 +291,7 @@ void LD::Polyfit(std::vector<cv::Point> VectorPoints, cv::Mat &dst)
     }
 
     // we apply polyfit, wich will result in 4 coefficients saved in dst
-    LD::polyfit_one(src_x, src_y,dst, 3);
+    LD::polyfit_one(src_x, src_y, dst, 3);
 }
 
 void PrintLines(cv::Mat &OriginalImg, cv::Mat dst,int x,int y,int z)
@@ -521,30 +564,14 @@ unsigned int LD::LaneDetection(cv::Mat OriginalImg)
     LD::Polyfit(InnerLeftLine, output_LD.ICL);
     LD::Polyfit(OuterRightLine, output_LD.OCR);
 
+//    std::cout << output_LD.OCL.at<float>(0) << std::endl;
+//    std::cout << output_LD.OCL.at<float>(1) << std::endl;
+//    std::cout << output_LD.OCL.at<float>(2) << std::endl;
+//    std::cout << output_LD.OCL.at<float>(3) << std::endl;
+
     //TODO: Apply Kalman Filter
+    LD::kalmanFilter(output_LD, output_KalmanLD);
 
     return 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

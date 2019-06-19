@@ -76,6 +76,16 @@ namespace DSP{
  *  \param thickness is the thickness in pixels of the drawn lines.
  */
     void FillLanes(cv::Mat* ,t_output_LD , unsigned int );
+
+/** \brief Fill Lanes is an LD Drawing Function.
+ *
+ *  This function draws over the original frame regions that delimit the detected lane.
+ *  \param frame is a pointer to the image matrix of the current frame.
+ *  \param lanes is the structure with the coefficients of the detected lane markers.
+ *  \param thickness is the thickness in pixels of the drawn lines.
+ */
+    void FillLanes(cv::Mat* ,t_output_KalmanLD , unsigned int );
+
 }
 
 
