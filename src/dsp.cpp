@@ -394,6 +394,15 @@ int main(int argc, char *argv[])
         }
 
         sequence >> p_frame;//read first frame to  know the width and height
+        //write to video
+        cv::VideoWriter out_capture("../road_out.avi", CV_FOURCC('M','J','P','G'), 25.0, cv::Size((p_frame).cols/2 ,(p_frame).rows/2), true);
+        std::cout << p_frame.cols <<std::endl;
+        std::cout << p_frame.rows <<std::endl;
+
+        if(!out_capture.isOpened()){
+            std::cout << "Video could not be opened for writing."<<std::endl;
+            return 0;
+        }
 
         // read frames until end of video:
         do{
@@ -433,10 +442,13 @@ int main(int argc, char *argv[])
             DSP::FillLanes(&p_frame, output_KalmanLD, 2);
 //            DSP::FillLanes(&p_frame, output_LD, 2);
 
-            cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE );// Create a window for display.
+            //save to video
+            out_capture.write((p_frame));
+
+  //          cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE );// Create a window for display.
             //cv::imshow("Lane Detection", image_ld);
-            cv::imshow("Display window", p_frame);
-            cv::waitKey(30);
+ //           cv::imshow("Display window", p_frame);
+//            cv::waitKey(30);
             generic_DSP.image_count += 1;
             std::cout << generic_DSP.image_count << std::endl;
 

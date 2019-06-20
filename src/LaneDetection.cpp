@@ -67,12 +67,12 @@ void LD::update(cv::Mat measurement, cv::Mat prior, cv::Mat &posterior, cv::Mat 
     posterior = prior + K*residual;
     posterior_P = prior_P - K*prior_P;
 
-    std::cout << "UPDATE" << std::endl;
-    std::cout << "measurement = " << measurement << std::endl;
-    std::cout << "posterior = " << posterior << std::endl;
-    std::cout << "prior = " << prior << std::endl;
-    std::cout << "posterior cov = " << posterior_P << std::endl;
-    std::cout << "prior cov = " << prior_P << std::endl;
+   // std::cout << "UPDATE" << std::endl;
+   // std::cout << "measurement = " << measurement << std::endl;
+   // std::cout << "posterior = " << posterior << std::endl;
+   // std::cout << "prior = " << prior << std::endl;
+   // std::cout << "posterior cov = " << posterior_P << std::endl;
+   // std::cout << "prior cov = " << prior_P << std::endl;
     std::cout << "kalman gain = " << K << std::endl;
 }
 
@@ -81,9 +81,9 @@ void LD::predict(cv::Mat posterior, cv::Mat posterior_P, cv::Mat &prior, cv::Mat
     prior = posterior.clone();
     prior_P = posterior_P + Q;
     
-    std::cout <<"PREDICT" << std::endl;
-    std::cout << "prior = " << prior << std::endl;
-    std::cout << "prior cov = " << prior_P << std::endl;
+   // std::cout <<"PREDICT" << std::endl;
+   // std::cout << "prior = " << prior << std::endl;
+   // std::cout << "prior cov = " << prior_P << std::endl;
     
 }
 
